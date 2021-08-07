@@ -25,6 +25,6 @@ public interface MedicalHistoryMapper {
     @Mapping(target="creadoPor", ignore=true)
     @Mapping(target="fechaActualizacion", ignore=true)
     @Mapping(target="actualizacionPor", ignore=true)
-    @Mapping(target="paciente", ignore=true)
+    //@Mapping(target="paciente", ignore=true)
     Historial toHistorial(MedicalHistory medicalHistory);
 }

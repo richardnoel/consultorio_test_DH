@@ -48,10 +48,11 @@ public class Paciente {
     @Column(name = "actualizado_por")
     private String actualizacionPor;
 
-    //@OneToOne(mappedBy = "paciente", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
-    @OneToMany(mappedBy = "paciente")
-    private List<Historial> historialList;
-    //private Historial historial;
+
+    //@OneToMany(mappedBy = "paciente")
+    //private List<Historial> historialList;
+    @OneToOne(mappedBy = "paciente", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    private Historial historial;
 
     @OneToMany(mappedBy = "paciente")
     private List<Consulta> consultaList;
@@ -167,14 +168,14 @@ public class Paciente {
     public void setActualizacionPor(String actualizacionPor) {
         this.actualizacionPor = actualizacionPor;
     }
-
-    public List<Historial> getHistorialList() {
-        return historialList;
-    }
-
-    public void setHistorialList(List<Historial> historialList) {
-        this.historialList = historialList;
-    }
+//
+//    public List<Historial> getHistorialList() {
+//        return historialList;
+//    }
+//
+//    public void setHistorialList(List<Historial> historialList) {
+//        this.historialList = historialList;
+//    }
 
     public List<Consulta> getConsultaList() {
         return consultaList;
@@ -182,5 +183,13 @@ public class Paciente {
 
     public void setConsultaList(List<Consulta> consultaList) {
         this.consultaList = consultaList;
+    }
+
+    public Historial getHistorial() {
+        return historial;
+    }
+
+    public void setHistorial(Historial historial) {
+        this.historial = historial;
     }
 }

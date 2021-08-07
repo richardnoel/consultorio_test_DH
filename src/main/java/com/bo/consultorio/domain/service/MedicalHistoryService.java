@@ -24,7 +24,6 @@ public class MedicalHistoryService {
     public Optional<List<MedicalHistory>> getByPatient(int patientId){
         return historyRepository.getByPatient(patientId);
     }
-    //    Optional<MedicalHistory> getHistorial(int idPaciente);
 
     public MedicalHistory save(MedicalHistory medicalHistory){
         return historyRepository.save(medicalHistory);

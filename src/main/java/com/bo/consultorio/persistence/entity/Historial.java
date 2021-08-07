@@ -16,10 +16,11 @@ public class Historial {
 
     private String historal;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_paciente", insertable = false, updatable = false)
+
 //    @ManyToOne
 //    @JoinColumn(name = "id_paciente", insertable = false, updatable = false)
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_paciente", insertable = false, updatable = false)
     private Paciente paciente;
 
     @Column(name = "fecha_creacion")
