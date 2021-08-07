@@ -8,16 +8,21 @@ import java.util.Date;
 public class Historial {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_historial")
     private Integer idHistorial;
     private String historal;
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "idPaciente", insertable = false, updatable = false)
     private Paciente paciente;
+    @Column(name = "fecha_creacion")
     @Temporal(TemporalType.DATE)
     private Date fechaCreacion;
+    @Column(name = "creado_por")
     private String creadoPor;
     @Temporal(TemporalType.DATE)
+    @Column(name = "fecha_actualizacion")
     private Date fechaActualizacion;
+    @Column(name = "actualizado_por")
     private String actualizacionPor;
 
     public Integer getIdHistorial() {

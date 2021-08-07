@@ -10,11 +10,12 @@ import java.util.List;
 public class Doctor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_doctor")
     private Integer idDoctor;
     private String nombre;
     private String apellido;
     @Temporal(TemporalType.DATE)
-    @Column(name="fecha_Nacimiento")
+    @Column(name="fecha_nacimiento")
     private Date fechaNacimiento;
     private String especialidad;
     private String direccion;
@@ -23,14 +24,19 @@ public class Doctor {
     private String correo;
     private String celular;
     private String telefono;
+    @Column(name = "fecha_creacion")
     @Temporal(TemporalType.DATE)
     private Date fechaCreacion;
+    @Column(name = "creado_por")
     private String creadoPor;
     @Temporal(TemporalType.DATE)
+    @Column(name = "fecha_actualizacion")
     private Date fechaActualizacion;
+    @Column(name = "actualizado_por")
     private String actualizacionPor;
-//    @OneToMany(mappedBy = "doctor", cascade = CascadeType.ALL, orphanRemoval = true)
-//    private List<Consulta> consultaList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "doctor")
+    private List<Consulta> consultaList;
 
 
     public Integer getIdDoctor() {

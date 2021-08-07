@@ -10,11 +10,13 @@ import java.util.List;
 public class Paciente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_paciente")
     private Integer idPaciente;
+    @Column(name = "numero_documento")
     private Integer numeroDocuemnto;
     private String nombre;
     private String apellido;
-    @Column(name = "fecha_Nacimiento")
+    @Column(name = "fecha_nacimiento")
     @Temporal(TemporalType.DATE)
     private Date fechaNacimiento;
     private String direccion;
@@ -22,14 +24,21 @@ public class Paciente {
     private String correo;
     private String celular;
     private String telefono;
+    @Column(name = "fecha_creacion")
+    @Temporal(TemporalType.DATE)
     private Date fechaCreacion;
+    @Column(name = "creado_por")
     private String creadoPor;
+    @Temporal(TemporalType.DATE)
+    @Column(name = "fecha_actualizacion")
     private Date fechaActualizacion;
+    @Column(name = "actualizado_por")
     private String actualizacionPor;
     @OneToOne(mappedBy = "paciente", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     private Historial historial;
-//    @OneToMany(mappedBy = "paciente", cascade = CascadeType.ALL, orphanRemoval = true)
-//    private List<Consulta> consultaList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "paciente")
+    private List<Consulta> consultaList;
 
     public Integer getIdPaciente() {
         return idPaciente;
@@ -151,11 +160,11 @@ public class Paciente {
         this.historial = historial;
     }
 
-//    public List<Consulta> getConsultaList() {
-//        return consultaList;
-//    }
-//
-//    public void setConsultaList(List<Consulta> consultaList) {
-//        this.consultaList = consultaList;
-//    }
+    public List<Consulta> getConsultaList() {
+        return consultaList;
+    }
+
+    public void setConsultaList(List<Consulta> consultaList) {
+        this.consultaList = consultaList;
+    }
 }

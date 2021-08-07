@@ -8,17 +8,23 @@ import java.util.Date;
 public class Receta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id_receta")
     private Integer idReceta ;
-    private Integer idConsulta ;
     private String dosis;
+    @Column(name = "fecha_creacion")
+    @Temporal(TemporalType.DATE)
     private Date fechaCreacion;
+    @Column(name = "creado_por")
     private String creadoPor;
+    @Temporal(TemporalType.DATE)
+    @Column(name = "fecha_actualizacion")
     private Date fechaActualizacion;
+    @Column(name = "actualizado_por")
     private String actualizacionPor;
-    @ManyToOne
-    @JoinColumn(name = "idConsulta", insertable = false, updatable = false)
-    private Receta receta;
 
+    @ManyToOne()
+    @JoinColumn(name = "id_consulta", insertable = false, updatable = false)
+    private Consulta consulta;
 
     public Integer getIdReceta() {
         return idReceta;
@@ -26,14 +32,6 @@ public class Receta {
 
     public void setIdReceta(Integer idReceta) {
         this.idReceta = idReceta;
-    }
-
-    public Integer getIdConsulta() {
-        return idConsulta;
-    }
-
-    public void setIdConsulta(Integer idConsulta) {
-        this.idConsulta = idConsulta;
     }
 
     public String getDosis() {
@@ -76,11 +74,11 @@ public class Receta {
         this.actualizacionPor = actualizacionPor;
     }
 
-    public Receta getReceta() {
-        return receta;
+    public Consulta getConsulta() {
+        return consulta;
     }
 
-    public void setReceta(Receta receta) {
-        this.receta = receta;
+    public void setConsulta(Consulta consulta) {
+        this.consulta = consulta;
     }
 }

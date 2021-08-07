@@ -17,6 +17,7 @@ public class PatientService {
     public List<Patient> getAll(){
         return patientRepository.getAll();
     }
+
     public Optional<Patient> getPatiente(int patientId){
         return patientRepository.getPatien(patientId);
     }

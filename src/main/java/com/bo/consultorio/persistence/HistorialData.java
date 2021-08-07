@@ -32,11 +32,11 @@ public class HistorialData implements MedicalHistoryRepository {
         return mapper.toMedicalHistorys(historialList);
     }
 
-    @Override
-    public Optional<MedicalHistory> getHistorial(int idPaciente) {
-        Historial historial = historialCrud.findByIdPaciente(idPaciente);
-        return Optional.of(mapper.toMedicalHistory(historial));
-    }
+//    @Override
+//    public Optional<MedicalHistory> getHistorial(int idPaciente) {
+//        Historial historial = historialCrud.findByIdPaciente(idPaciente);
+//        return Optional.of(mapper.toMedicalHistory(historial));
+//    }
 
     @Override
     public MedicalHistory save(MedicalHistory medicalHistory) {

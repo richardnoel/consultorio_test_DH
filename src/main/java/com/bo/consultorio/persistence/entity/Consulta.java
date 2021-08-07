@@ -3,24 +3,39 @@ package com.bo.consultorio.persistence.entity;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
+@Entity
+@Table(name="consulta")
 public class Consulta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_consulta")
     private Integer idConsulta;
+    @Temporal(TemporalType.DATE)
     private Date fecha;
+    @Column(name = "fecha_creacion")
+    @Temporal(TemporalType.DATE)
     private Date fechaCreacion;
+    @Column(name = "creado_por")
     private String creadoPor;
+    @Temporal(TemporalType.DATE)
+    @Column(name = "fecha_actualizacion")
     private Date fechaActualizacion;
+    @Column(name = "actualizado_por")
     private String actualizacionPor;
-//    @ManyToOne
-//    @JoinColumn(name = "idDoctor", insertable = false, updatable = false)
-//    private Doctor doctor;
-    @ManyToOne
-    @JoinColumn(name = "idPaciente", insertable = false, updatable = false)
+
+    @ManyToOne()
+    @JoinColumn(name = "id_doctor", insertable = false, updatable = false)
+    private Doctor doctor;
+
+    @ManyToOne()
+    @JoinColumn(name = "id_paciente", insertable = false, updatable = false)
     private Paciente paciente;
-//    @OneToMany(mappedBy = "receta")
-//    private ArrayList<Receta> recetaList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "consulta", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Receta> recetaList;
+
 
     public Integer getIdConsulta() {
         return idConsulta;
@@ -37,14 +52,14 @@ public class Consulta {
     public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
-//
-//    public Doctor getDoctor() {
-//        return doctor;
-//    }
-//
-//    public void setDoctor(Doctor doctor) {
-//        this.doctor = doctor;
-//    }
+
+    public Doctor getDoctor() {
+        return doctor;
+    }
+
+    public void setDoctor(Doctor doctor) {
+        this.doctor = doctor;
+    }
 
     public Paciente getPaciente() {
         return paciente;
