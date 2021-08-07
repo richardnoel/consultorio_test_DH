@@ -10,18 +10,29 @@ public class Historial {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_historial")
     private Integer idHistorial;
+
+    @Column(name = "id_paciente")
+    private Integer idPaciente;
+
     private String historal;
+
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idPaciente", insertable = false, updatable = false)
+    @JoinColumn(name = "id_paciente", insertable = false, updatable = false)
+//    @ManyToOne
+//    @JoinColumn(name = "id_paciente", insertable = false, updatable = false)
     private Paciente paciente;
+
     @Column(name = "fecha_creacion")
     @Temporal(TemporalType.DATE)
     private Date fechaCreacion;
+
     @Column(name = "creado_por")
     private String creadoPor;
+
     @Temporal(TemporalType.DATE)
     @Column(name = "fecha_actualizacion")
     private Date fechaActualizacion;
+
     @Column(name = "actualizado_por")
     private String actualizacionPor;
 
@@ -79,5 +90,13 @@ public class Historial {
 
     public void setActualizacionPor(String actualizacionPor) {
         this.actualizacionPor = actualizacionPor;
+    }
+
+    public Integer getIdPaciente() {
+        return idPaciente;
+    }
+
+    public void setIdPaciente(Integer idPaciente) {
+        this.idPaciente = idPaciente;
     }
 }

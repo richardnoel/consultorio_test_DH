@@ -15,8 +15,7 @@ import java.util.List;
 public interface MedicalHistoryMapper {
     @Mappings({
             @Mapping(source = "idHistorial", target = "idHistory"),
-            @Mapping(source = "historal", target = "history"),
-            @Mapping(source = "paciente", target = "patient"),
+            @Mapping(source = "historal", target = "history")
     })
     MedicalHistory toMedicalHistory(Historial historial);
     List<MedicalHistory> toMedicalHistorys(List<Historial> historialList);
@@ -26,5 +25,6 @@ public interface MedicalHistoryMapper {
     @Mapping(target="creadoPor", ignore=true)
     @Mapping(target="fechaActualizacion", ignore=true)
     @Mapping(target="actualizacionPor", ignore=true)
+    @Mapping(target="paciente", ignore=true)
     Historial toHistorial(MedicalHistory medicalHistory);
 }

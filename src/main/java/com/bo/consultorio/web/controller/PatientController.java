@@ -23,14 +23,17 @@ public class PatientController {
     public Optional<Patient> getPatiente(@PathVariable("id") int patientId){
         return service.getPatiente(patientId);
     }
+
     @GetMapping("/name/{firstName}")
     public List<Patient> getByName(@PathVariable("firstName") String name){
         return service.getByName(name);
     }
+
     @GetMapping("/lastName/{lastName}")
     public Optional<List<Patient>>getBylastName(@PathVariable("lastName") String lastName){
         return service.getBylastName(lastName);
     }
+
     @GetMapping("/document/{document}")
     public Optional<List<Patient>> getByDocumentNumber(@PathVariable("document") int documentNumber){
         return service.getByDocumentNumber(documentNumber);

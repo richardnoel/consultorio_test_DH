@@ -7,9 +7,9 @@ import java.util.List;
 import java.util.Optional;
 
 public interface MedicalHistoryRepository {
-    Optional<MedicalHistory> getById(int idHistory);
+    Optional<MedicalHistory> getHistory(int idHistory);
     List<MedicalHistory> getAll();
-//    Optional<MedicalHistory> getHistorial(int idPaciente);
+    Optional<List<MedicalHistory>>  getByPatient(int idPaciente);
     MedicalHistory save(MedicalHistory medicalHistory);
     void delete(Integer idHistory);
 }

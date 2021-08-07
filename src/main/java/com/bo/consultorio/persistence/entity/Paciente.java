@@ -12,30 +12,46 @@ public class Paciente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_paciente")
     private Integer idPaciente;
+
     @Column(name = "numero_documento")
     private Integer numeroDocuemnto;
+
     private String nombre;
+
     private String apellido;
+
     @Column(name = "fecha_nacimiento")
     @Temporal(TemporalType.DATE)
     private Date fechaNacimiento;
+
     private String direccion;
+
     private String foto;
+
     private String correo;
+
     private String celular;
+
     private String telefono;
+
     @Column(name = "fecha_creacion")
     @Temporal(TemporalType.DATE)
     private Date fechaCreacion;
+
     @Column(name = "creado_por")
     private String creadoPor;
+
     @Temporal(TemporalType.DATE)
     @Column(name = "fecha_actualizacion")
     private Date fechaActualizacion;
+
     @Column(name = "actualizado_por")
     private String actualizacionPor;
-    @OneToOne(mappedBy = "paciente", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
-    private Historial historial;
+
+    //@OneToOne(mappedBy = "paciente", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "paciente")
+    private List<Historial> historialList;
+    //private Historial historial;
 
     @OneToMany(mappedBy = "paciente")
     private List<Consulta> consultaList;
@@ -152,12 +168,12 @@ public class Paciente {
         this.actualizacionPor = actualizacionPor;
     }
 
-    public Historial getHistorial() {
-        return historial;
+    public List<Historial> getHistorialList() {
+        return historialList;
     }
 
-    public void setHistorial(Historial historial) {
-        this.historial = historial;
+    public void setHistorialList(List<Historial> historialList) {
+        this.historialList = historialList;
     }
 
     public List<Consulta> getConsultaList() {

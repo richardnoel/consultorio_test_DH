@@ -22,7 +22,7 @@ public class HistorialData implements MedicalHistoryRepository {
     private MedicalHistoryMapper mapper;
 
     @Override
-    public Optional<MedicalHistory> getById(int idHistory) {
+    public Optional<MedicalHistory> getHistory(int idHistory) {
         return historialCrud.findById(idHistory).map(historial -> mapper.toMedicalHistory(historial));
     }
 
@@ -32,11 +32,11 @@ public class HistorialData implements MedicalHistoryRepository {
         return mapper.toMedicalHistorys(historialList);
     }
 
-//    @Override
-//    public Optional<MedicalHistory> getHistorial(int idPaciente) {
-//        Historial historial = historialCrud.findByIdPaciente(idPaciente);
-//        return Optional.of(mapper.toMedicalHistory(historial));
-//    }
+    @Override
+    public Optional<List<MedicalHistory>>  getByPatient(int idPaciente) {
+        List<Historial> historialList = historialCrud.findByIdPaciente(idPaciente);
+        return Optional.of(mapper.toMedicalHistorys(historialList));
+    }
 
     @Override
     public MedicalHistory save(MedicalHistory medicalHistory) {
