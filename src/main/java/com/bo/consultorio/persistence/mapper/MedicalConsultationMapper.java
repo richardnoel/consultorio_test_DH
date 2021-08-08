@@ -11,13 +11,14 @@ import org.mapstruct.Mappings;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = {DoctMapper.class, PatientMapper.class})
 public interface MedicalConsultationMapper {
     @Mappings({
             @Mapping(source = "idConsulta", target="consultationId"),
             @Mapping(source = "idDoctor", target = "doctorId"),
             @Mapping(source = "idPaciente", target = "patientId"),
-            @Mapping(source = "fecha", target="date")
+            @Mapping(source = "fecha", target="date"),
+            @Mapping(source = "paciente", target="patient")
     })
     MedicalConsultation toMedicalConsultation(Consulta consulta);
     List<MedicalConsultation> toMedicalConsultationList(List<Consulta> consultaList);

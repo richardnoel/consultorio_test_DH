@@ -7,6 +7,8 @@ public class MedicalConsultation {
     private Integer doctorId;
     private Integer patientId;
     private Date date;
+    private Doctor doctor;
+    private Patient patient;
 
     public Integer getDoctorId() {
         return doctorId;
@@ -38,5 +40,21 @@ public class MedicalConsultation {
 
     public void setConsultationId(Integer consultationId) {
         this.consultationId = consultationId;
+    }
+
+    public Doctor getDoctor() {
+        return doctor;
+    }
+
+    public void setDoctor(Doctor doctor) {
+        this.doctor = doctor;
+    }
+
+    public Patient getPatient() {
+        return patient;
+    }
+
+    public void setPatient(Patient patient) {
+        this.patient = patient;
     }
 }
