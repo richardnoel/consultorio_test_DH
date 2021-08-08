@@ -82,15 +82,14 @@ CREATE TABLE Especialidad(
 );
 
 
-#Doctores
 INSERT INTO `consultorio_familiar`.`doctor`
-(`nombre`,`apellido`,`fecha_nacimiento`,`especialidad`,`direccion`,`foto`,`registroMedico`,`correo`,`celular`,`telefono`)
+(`nombre`,`apellido`,`fecha_nacimiento`,`especialidad`,`direccion`,`foto`,`registro_medico`,`correo`,`celular`,`telefono`)
 VALUES ('JUAN JOSE', 'MAMANI MAMANI', '1991-11-05 00:00:00', 'PEDIATRA', 'ZONA VILLA TUNARI', NULL, '0000001', 'jose@gmail.com', 77707321, 591+22222222);
 
 INSERT INTO `consultorio_familiar`.`doctor`
-(`nombre`,`apellido`,`fecha_nacimiento`,`especialidad`,`direccion`,`foto`,`registroMedico`,`correo`,`celular`,`telefono`)
+(`nombre`,`apellido`,`fecha_nacimiento`,`especialidad`,`direccion`,`foto`,`registro_medico`,`correo`,`celular`,`telefono`)
 VALUES ('PEDRO', 'MAMANI CORTEZ', '1985-01-06 00:00:00', 'GENERAL', 'ZONA ACHACHICALA', NULL, '0000002', 'pedro@gmail.com', 77707321, 591+22222222);
-#pacientes
+
 
 INSERT INTO `consultorio_familiar`.`paciente`
 (`numero_documento`,`nombre`,`apellido`,`fecha_nacimiento`,`direccion`,`foto`,`correo`,`celular`,`telefono`)
@@ -100,8 +99,9 @@ INSERT INTO `consultorio_familiar`.`paciente`
 (`numero_documento`,`nombre`,`apellido`,`fecha_nacimiento`,`direccion`,`foto`,`correo`,`celular`,`telefono`)
 VALUES('6787435','CELIA','MAMANI YUJRA','1989-06-05 00:00:00','Zona Achachicala',NULL,'celia@correo.com','65412388',NULL);
 
-#consulta
-INSERT INTO `consultorio_familiar`.`consulta` (`fecha`,`id_doctor`,`id_paciente`) VALUES ( CURRENT_TIMESTAMP, 1, 1);
 
-#Historial
+INSERT INTO `consultorio_familiar`.`consulta` (`fecha`,`id_doctor`,`id_paciente`) VALUES ( CURRENT_TIMESTAMP, 1, 1);
+INSERT INTO `consultorio_familiar`.`consulta` (`fecha`,`id_doctor`,`id_paciente`) VALUES (CURRENT_TIMESTAMP,1,2);
+INSERT INTO `consultorio_familiar`.`consulta` (`fecha`,`id_doctor`,`id_paciente`) VALUES (CURRENT_TIMESTAMP,2,2);
+
 INSERT INTO `consultorio_familiar`.`historial` (`historal`,`id_paciente`) VALUES ( 'bla bla bla bla', 1);
