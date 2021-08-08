@@ -9,8 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.bo</groupId>
-	<artifactId>consultorio</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>consultorio-familiar</artifactId>
+	<version>1.0.0</version>
+	<packaging>jar</packaging>
 	<name>consultorio</name>
 	<description>Proyecto Consultorio Medico</description>
 	<properties>
