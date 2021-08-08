@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface ConsultaCrud extends CrudRepository<Consulta, Integer> {
     List<Consulta> findByIdDoctor(int idDoctor);
+    List<Consulta> findByIdPaciente(int idPaciente);
 }

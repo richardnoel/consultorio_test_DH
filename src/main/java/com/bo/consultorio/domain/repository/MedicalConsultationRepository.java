@@ -8,6 +8,7 @@ import java.util.List;
 public interface MedicalConsultationRepository {
     List<MedicalConsultation> getAll();
     List<MedicalConsultation> getMedicalConsultationByDoctor(int doctorId);
+    List<MedicalConsultation> getMedicalConsultationByPatient(int patientId);
     MedicalConsultation getMedicalConsultation(int consultationId);
     MedicalConsultation save(MedicalConsultation consultation);
     void delete(int consultationId);

@@ -58,6 +58,25 @@ public class ConsultaRepository implements MedicalConsultationRepository {
     }
 
     @Override
+    public List<MedicalConsultation> getMedicalConsultationByPatient(int patientId) {
+        List<MedicalConsultation> medicalConsultationList = new ArrayList<>();
+        MedicalConsultation consultation = new MedicalConsultation();
+        try {
+            List<Consulta> consultaList = crud.findByIdPaciente(patientId);
+            consultaList.forEach(item -> {
+                MedicalConsultation medicalConsultation = mapper.toMedicalConsultation(item);
+                medicalConsultationList.add(medicalConsultation);
+            });
+            return medicalConsultationList;
+        } catch (Exception e) {
+            System.out.println(e);
+            return null;
+        }
+    }
+
+
+
+    @Override
     public MedicalConsultation save(MedicalConsultation consultation) {
         Consulta consulta = mapper.toConsulta(consultation);
         consulta = crud.save(consulta);

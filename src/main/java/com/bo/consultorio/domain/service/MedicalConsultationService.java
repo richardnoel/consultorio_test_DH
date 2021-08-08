@@ -25,6 +25,11 @@ public class MedicalConsultationService {
         return repository.getMedicalConsultationByDoctor(doctorId);
     }
 
+    public List<MedicalConsultation> getByPatient(int patitentId) {
+        return repository.getMedicalConsultationByPatient(patitentId);
+    }
+
+
     public MedicalConsultation save(MedicalConsultation consultation) {
         return repository.save(consultation);
     }

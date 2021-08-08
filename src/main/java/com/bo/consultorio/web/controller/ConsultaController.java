@@ -27,6 +27,11 @@ public class ConsultaController {
         return service.getByDoctor(doctorId);
     }
 
+    @GetMapping("/patient/{id}")
+    public List<MedicalConsultation> getByPatient(@PathVariable("id") int patientId) {
+        return service.getByPatient(patientId);
+    }
+
 
     @PostMapping("/save")
     public MedicalConsultation save(@RequestBody MedicalConsultation consultation) {
