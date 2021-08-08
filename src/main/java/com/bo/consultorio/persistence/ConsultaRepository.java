@@ -8,6 +8,7 @@ import com.bo.consultorio.persistence.mapper.MedicalConsultationMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -33,6 +34,23 @@ public class ConsultaRepository implements MedicalConsultationRepository {
             Optional<MedicalConsultation> doctorOpt = consultaOpt.map(item -> mapper.toMedicalConsultation(item));
             consultation = doctorOpt.get();
             return consultation;
+        } catch (Exception e) {
+            System.out.println(e);
+            return null;
+        }
+    }
+
+    @Override
+    public List<MedicalConsultation> getMedicalConsultationByDoctor(int doctorId) {
+        List<MedicalConsultation> medicalConsultationList = new ArrayList<>();
+        MedicalConsultation consultation = new MedicalConsultation();
+        try {
+            List<Consulta> consultaList = crud.findByIdDoctor(doctorId);
+            consultaList.forEach(item -> {
+                MedicalConsultation medicalConsultation = mapper.toMedicalConsultation(item);
+                medicalConsultationList.add(medicalConsultation);
+            });
+            return medicalConsultationList;
         } catch (Exception e) {
             System.out.println(e);
             return null;

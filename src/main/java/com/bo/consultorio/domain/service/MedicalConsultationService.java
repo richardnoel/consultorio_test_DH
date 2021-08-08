@@ -20,7 +20,11 @@ public class MedicalConsultationService {
     public List<MedicalConsultation> getAll() {
         return repository.getAll();
     }
-    
+
+    public List<MedicalConsultation> getByDoctor(int doctorId) {
+        return repository.getMedicalConsultationByDoctor(doctorId);
+    }
+
     public MedicalConsultation save(MedicalConsultation consultation) {
         return repository.save(consultation);
     }

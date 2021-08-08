@@ -22,6 +22,12 @@ public class ConsultaController {
         return service.getMedicalConsultation(consultationId);
     }
 
+    @GetMapping("/doctor/{id}")
+    public List<MedicalConsultation> getByDoctor(@PathVariable("id") int doctorId) {
+        return service.getByDoctor(doctorId);
+    }
+
+
     @PostMapping("/save")
     public MedicalConsultation save(@RequestBody MedicalConsultation consultation) {
         return service.save(consultation);
@@ -31,4 +37,9 @@ public class ConsultaController {
     public boolean delete(@PathVariable("id") int consultationId) {
         return service.delete(consultationId);
     }
+
+
+
+
+
 }
