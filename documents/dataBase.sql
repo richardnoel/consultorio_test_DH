@@ -105,3 +105,6 @@ INSERT INTO `consultorio_familiar`.`consulta` (`fecha`,`id_doctor`,`id_paciente`
 INSERT INTO `consultorio_familiar`.`consulta` (`fecha`,`id_doctor`,`id_paciente`) VALUES (CURRENT_TIMESTAMP,2,2);
 
 INSERT INTO `consultorio_familiar`.`historial` (`historal`,`id_paciente`) VALUES ( 'bla bla bla bla', 1);
+
+INSERT INTO `consultorio_familiar`.`receta` (`id_consulta`,`dosis`)VALUES( 1, 'Debe Tomar Paracetamol 2 veces al dia, y ibuprofeno cada 8 horas');
+INSERT INTO `consultorio_familiar`.`receta` (`id_consulta`,`dosis`)VALUES( 2, 'debe tomas ibuprofeno cada 8 horas y Paracetamol 2 veces al dia');

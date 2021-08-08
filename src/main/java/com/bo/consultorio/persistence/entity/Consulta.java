@@ -43,7 +43,7 @@ public class Consulta {
     @JoinColumn(name = "id_paciente", insertable = false, updatable = false)
     private Paciente paciente;
 
-    @OneToMany(mappedBy = "consulta", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "consulta")
     private List<Receta> recetaList;
 
 

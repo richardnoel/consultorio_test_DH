@@ -10,6 +10,8 @@ public class Receta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_receta")
     private Integer idReceta ;
+    @Column(name="id_consulta")
+    private Integer idConsulta ;
     private String dosis;
     @Column(name = "fecha_creacion")
     @Temporal(TemporalType.DATE)
@@ -21,7 +23,7 @@ public class Receta {
     private Date fechaActualizacion;
     @Column(name = "actualizado_por")
     private String actualizacionPor;
-
+    
     @ManyToOne()
     @JoinColumn(name = "id_consulta", insertable = false, updatable = false)
     private Consulta consulta;
@@ -80,5 +82,13 @@ public class Receta {
 
     public void setConsulta(Consulta consulta) {
         this.consulta = consulta;
+    }
+
+    public Integer getIdConsulta() {
+        return idConsulta;
+    }
+
+    public void setIdConsulta(Integer idConsulta) {
+        this.idConsulta = idConsulta;
     }
 }
