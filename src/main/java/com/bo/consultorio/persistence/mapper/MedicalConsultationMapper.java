@@ -15,6 +15,8 @@ import java.util.List;
 public interface MedicalConsultationMapper {
     @Mappings({
             @Mapping(source = "idConsulta", target="consultationId"),
+            @Mapping(source = "idDoctor", target = "doctorId"),
+            @Mapping(source = "idPaciente", target = "patientId"),
             @Mapping(source = "fecha", target="date")
     })
     MedicalConsultation toMedicalConsultation(Consulta consulta);
@@ -25,5 +27,6 @@ public interface MedicalConsultationMapper {
     @Mapping(target="creadoPor", ignore=true)
     @Mapping(target="fechaActualizacion", ignore=true)
     @Mapping(target="actualizacionPor", ignore=true)
+
     Consulta toConsulta(MedicalConsultation consultation);
 }

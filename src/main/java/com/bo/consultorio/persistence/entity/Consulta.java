@@ -11,16 +11,27 @@ public class Consulta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_consulta")
     private Integer idConsulta;
+
     @Temporal(TemporalType.DATE)
     private Date fecha;
+
+    @Column(name = "id_doctor")
+    private Integer idDoctor;
+
+    @Column(name = "id_paciente")
+    private Integer idPaciente;
+
     @Column(name = "fecha_creacion")
     @Temporal(TemporalType.DATE)
     private Date fechaCreacion;
+
     @Column(name = "creado_por")
     private String creadoPor;
+
     @Temporal(TemporalType.DATE)
     @Column(name = "fecha_actualizacion")
     private Date fechaActualizacion;
+
     @Column(name = "actualizado_por")
     private String actualizacionPor;
 
@@ -100,11 +111,27 @@ public class Consulta {
         this.actualizacionPor = actualizacionPor;
     }
 
-//    public ArrayList<Receta> getRecetaList() {
-//        return recetaList;
-//    }
-//
-//    public void setRecetaList(ArrayList<Receta> recetaList) {
-//        this.recetaList = recetaList;
-//    }
+    public Integer getIdDoctor() {
+        return idDoctor;
+    }
+
+    public void setIdDoctor(Integer idDoctor) {
+        this.idDoctor = idDoctor;
+    }
+
+    public Integer getIdPaciente() {
+        return idPaciente;
+    }
+
+    public void setIdPaciente(Integer idPaciente) {
+        this.idPaciente = idPaciente;
+    }
+
+    public List<Receta> getRecetaList() {
+        return recetaList;
+    }
+
+    public void setRecetaList(List<Receta> recetaList) {
+        this.recetaList = recetaList;
+    }
 }
