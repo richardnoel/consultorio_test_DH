@@ -17,6 +17,8 @@
 		<java.version>11</java.version>
 		<org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
 		<mysql.version>8.0.26</mysql.version>
+		<io.springfox.version>2.9.2</io.springfox.version>
+		<io.springfox.swagger2.version>2.9.2</io.springfox.swagger2.version>
 		<org.springframework.boot.version>2.3.1.RELEASE</org.springframework.boot.version>
 	</properties>
 	<dependencies>
@@ -47,6 +49,19 @@
 			<groupId>org.mapstruct</groupId>
 			<artifactId>mapstruct</artifactId>
 			<version>${org.mapstruct.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>${io.springfox.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>${io.springfox.swagger2.version}</version>
 		</dependency>
 	</dependencies>
 
