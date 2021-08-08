@@ -49,6 +49,4 @@ public class PatientController {
         return service.delete(patientId);
     }
 
-
-
 }

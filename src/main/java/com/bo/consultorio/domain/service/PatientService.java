@@ -2,7 +2,6 @@ package com.bo.consultorio.domain.service;
 
 import com.bo.consultorio.domain.Patient;
 import com.bo.consultorio.domain.repository.PatientRepository;
-import com.bo.consultorio.persistence.entity.Paciente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

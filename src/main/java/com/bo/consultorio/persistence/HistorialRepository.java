@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class HistorialData implements MedicalHistoryRepository {
+public class HistorialRepository implements MedicalHistoryRepository {
     @Autowired
     private HistorialCrud historialCrud;
     @Autowired

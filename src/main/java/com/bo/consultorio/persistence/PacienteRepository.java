@@ -13,21 +13,21 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class PacienteData implements PatientRepository {
+public class PacienteRepository implements PatientRepository {
     @Autowired
     private PacienteCrud pacienteCrud;
     @Autowired
     private PatientMapper mapper;
 
     @Override
-    public Optional<Patient> getPatien(int patientId) {
-        return pacienteCrud.findById(patientId).map(paciente -> mapper.toPatient(paciente));
-    }
-
-    @Override
     public List<Patient> getAll() {
         List<Paciente> pacienteList = (List<Paciente>) pacienteCrud.findAll();
         return mapper.toPatiens(pacienteList);
+    }
+
+    @Override
+    public Optional<Patient> getPatien(int patientId) {
+        return pacienteCrud.findById(patientId).map(item -> mapper.toPatient(item));
     }
 
     @Override

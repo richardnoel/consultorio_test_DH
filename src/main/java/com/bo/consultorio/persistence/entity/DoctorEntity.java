@@ -7,7 +7,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "doctor")
-public class Doctor {
+public class DoctorEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_doctor")
@@ -20,6 +20,7 @@ public class Doctor {
     private String especialidad;
     private String direccion;
     private String foto;
+    @Column(name = "registro_medico")
     private String registroMedico;
     private String correo;
     private String celular;

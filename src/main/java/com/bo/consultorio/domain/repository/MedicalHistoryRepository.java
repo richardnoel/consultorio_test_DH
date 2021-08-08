@@ -1,8 +1,6 @@
 package com.bo.consultorio.domain.repository;
 
 import com.bo.consultorio.domain.MedicalHistory;
-import com.bo.consultorio.domain.Patient;
-
 import java.util.List;
 import java.util.Optional;
 

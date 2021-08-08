@@ -2,7 +2,7 @@ package com.bo.consultorio.domain;
 
 import java.util.Date;
 
-public class DoctorData {
+public class Doctor {
     private Integer doctorId;
     private String firstName;
     private String lastName;

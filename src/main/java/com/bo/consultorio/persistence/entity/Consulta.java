@@ -1,7 +1,6 @@
 package com.bo.consultorio.persistence.entity;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -27,7 +26,7 @@ public class Consulta {
 
     @ManyToOne()
     @JoinColumn(name = "id_doctor", insertable = false, updatable = false)
-    private Doctor doctor;
+    private DoctorEntity doctor;
 
     @ManyToOne()
     @JoinColumn(name = "id_paciente", insertable = false, updatable = false)
@@ -53,11 +52,11 @@ public class Consulta {
         this.fecha = fecha;
     }
 
-    public Doctor getDoctor() {
+    public DoctorEntity getDoctor() {
         return doctor;
     }
 
-    public void setDoctor(Doctor doctor) {
+    public void setDoctor(DoctorEntity doctor) {
         this.doctor = doctor;
     }
 

@@ -25,7 +25,7 @@ CREATE TABLE Doctor(
     especialidad VARCHAR(100) NOT NULL,
     direccion VARCHAR(50) NOT NULL,
     foto BLOB,
-    registroMedico  VARCHAR(50),
+    registro_medico  VARCHAR(50),
     correo VARCHAR(100),
     celular VARCHAR(100),
     telefono VARCHAR(100),
