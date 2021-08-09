@@ -1,0 +1,6 @@
+http://localhost:8090/consultorio/api/swagger-ui.html
+
+https://quilljs.com/docs/api/#setcontents
+https://material.angular.io/components/input/examples
+https://fonts.google.com/icons
+https://material.angular.io/cdk/categories
